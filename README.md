@@ -6,7 +6,7 @@
 
 紧凑状态条显示在 Windows 任务栏右上方：
 
-![Codex 用量任务栏组件紧凑状态条](./codex-taskbar-usage-widget/preview-collapsed.png)
+![Codex 用量任务栏组件紧凑状态条](./codex-taskbar-usage-widget/preview-ai.png)
 
 仓库核心只有一个文件夹：[`codex-taskbar-usage-widget/`](./codex-taskbar-usage-widget/)。其中：
 
