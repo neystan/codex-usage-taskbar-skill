@@ -1,21 +1,41 @@
-# Codex Usage Taskbar
+# Codex Usage Taskbar Skill
 
-Windows 原生 Codex 额度任务栏组件：状态条显示 5 小时剩余额度，悬停可查看 5 小时与周额度、刷新时间和操作按钮。
+这是一个 Windows Codex 用量任务栏组件的 Skill 包。它读取本机 Codex 的 5 小时与周额度，在任务栏旁显示剩余额度；支持悬停详情、手动刷新、托盘菜单和随 Codex 自动启动。
 
-这个仓库同时提供两种团队使用方式：
+仓库只保留两类可交付内容：
 
-- 安装 `codex-taskbar-usage-widget` 插件，让 Codex 从规范或随插件附带的源码模板创建适合本机的版本；
-- 直接复制源码模板，或从 GitHub Releases 下载 self-contained `win-x64` 发布包。
+- `codex-taskbar-usage-widget/SKILL.md`：让 Codex 按既定体验自行设计、创建或改造组件的规则；
+- `codex-taskbar-usage-widget/source/`：已经实现好的同款 WPF 源码，供 Codex 直接复用。
 
-完整安装、源码复用和发布包说明见 [docs/INSTALL.md](docs/INSTALL.md)。
+## 方式一：安装 Skill 后自行设计
 
-## 开发
+把整个 `codex-taskbar-usage-widget` 文件夹复制到本机：
 
-```powershell
-dotnet test CodexUsageTaskbar.sln
-powershell -ExecutionPolicy Bypass -File .\scripts\sync-plugin-template.ps1
-powershell -ExecutionPolicy Bypass -File .\scripts\package-release.ps1 -Version 0.1.0
+```text
+%USERPROFILE%\.codex\skills\codex-taskbar-usage-widget\
 ```
 
-发布脚本会先运行全部测试，再在 `artifacts/` 中生成 self-contained `win-x64` ZIP 与 SHA-256 文件。该目录不会提交到 Git；将来在 GitHub 中创建 Release 时上传这两个文件即可。
+重启 Codex 或新建任务，然后直接提出需求，例如：
 
+> 为我设计一个任务栏旁的 Codex 用量组件，保持玻璃风格，但把状态条改成圆角胶囊。
+
+Codex 会遵循 Skill 中的数据读取、安全、刷新、悬停和自动启动约束来实现你的版本。
+
+## 方式二：直接复用同款源码
+
+将 `codex-taskbar-usage-widget/source/` 复制到你的工作区，再让 Codex 直接基于该目录修改：
+
+> 使用这个 source 文件夹中的 WPF 项目，直接构建并运行同款 Codex Usage Taskbar；只在我明确提出时改变功能或外观。
+
+源码需要 Windows 与 .NET 9 SDK。构建命令：
+
+```powershell
+cd codex-taskbar-usage-widget\source
+dotnet build CodexUsageTaskbar.sln -c Release
+```
+
+构建完成后运行 `src\CodexUsageTaskbar\bin\Release\net9.0-windows\CodexUsageTaskbar.exe`。如需安装自动启动任务：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\install-autostart.ps1 -LauncherPath .\src\CodexUsageTaskbar.Launcher\bin\Release\net9.0\CodexUsageTaskbar.Launcher.exe
+```

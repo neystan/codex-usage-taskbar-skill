@@ -9,7 +9,7 @@ Maintain a standalone WPF taskbar widget; never edit Codex binaries or copy acco
 
 ## Reuse first
 
-When this plugin is installed, prefer the verified source template in the plugin's sibling `assets/source-template` directory. Copy that template into the user's requested workspace before customizing it, and never overwrite a non-empty destination. The template includes the solution, WPF widget, launcher, tests, and autostart installer. Create a fresh implementation only when the user explicitly asks for a different stack or the template cannot meet the requested behavior.
+Prefer the verified WPF project in this Skill folder's sibling `source` directory. Copy that source into the user's requested workspace before customizing it, and never overwrite a non-empty destination. It includes the solution, WPF widget, launcher, and autostart installer. Create a fresh implementation only when the user explicitly asks for a different stack or the supplied source cannot meet the requested behavior.
 
 ## Data and refresh
 
