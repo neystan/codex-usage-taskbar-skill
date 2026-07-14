@@ -2,6 +2,12 @@
 
 这是一个 Windows Codex 用量任务栏组件的 Skill 包。它从本机 Codex 读取 5 小时与周额度，在任务栏旁显示剩余额度，并包含悬停详情、手动刷新、托盘菜单和随 Codex 自动启动的实现约束。
 
+## 效果预览
+
+紧凑状态条显示在 Windows 任务栏右上方：
+
+![Codex 用量任务栏组件紧凑状态条](./codex-taskbar-usage-widget/preview-collapsed.png)
+
 仓库核心只有一个文件夹：[`codex-taskbar-usage-widget/`](./codex-taskbar-usage-widget/)。其中：
 
 - `SKILL.md`：让 Codex 设计、创建、修复或改造组件的规则；
