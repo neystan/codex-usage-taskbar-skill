@@ -30,6 +30,14 @@ Prefer the verified WPF project in this Skill folder's sibling `source` director
 - Detect hover from actual cursor position every ~75 ms, transformed with `Window.PointFromScreen`, rather than depending only on WPF `MouseEnter`/`MouseLeave`. This remains reliable when refreshed text changes the auto-sized window.
 - Hide the widget only through its explicit button or tray action; ignore pointer polling while the window is hidden.
 
+## Visual style
+
+- Match the graphite glass style: use a semi-transparent graphite-gray surface, warm silver-white outlines and text, and `#78B9F7` for the quota/battery accent. Avoid saturated green or blue panel fills.
+- Prefer `Segoe UI Variable Text` with `Microsoft YaHei UI` fallback. Use clear white, semibold hierarchy: the detail title is largest, the update time and header buttons share the next size, and metadata is smaller but still readable.
+- Arrange the header as `Codex 额度 · 更新 HH:mm · 更新 · 隐藏` on one vertically centered row. Keep the title-to-time gap near 12 px, time-to-update-button gap near 10 px, and the two-button gap near 5 px before any overall layout scaling.
+- Use rounded, thin silver outlines for the two quota rows and header buttons. Keep the content-size layout rather than a fixed panel width.
+- When the user requests a global size change, use one root `LayoutTransform` scale so fonts, strokes, padding, and interaction geometry retain their proportions. The current preferred scale is `0.75` of the unscaled design.
+
 ## Lifecycle
 
 - Use a single-instance mutex and a notification-area icon with `显示` and `退出工具` actions.
