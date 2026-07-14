@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Usage Taskbar"
+  short_description: "Maintain the Windows Codex quota taskbar widget"
+  default_prompt: "Use $codex-taskbar-usage-widget to create or repair my Windows Codex usage taskbar widget."

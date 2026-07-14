@@ -1,0 +1,23 @@
+{
+  "name": "codex-taskbar-usage-widget",
+  "version": "0.1.0",
+  "description": "Create, customize, or reuse a Windows Codex usage taskbar widget.",
+  "author": {
+    "name": "neystan",
+    "email": "2918360904@qq.com",
+    "url": "https://github.com/neystan/"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codex Taskbar Usage Widget",
+    "shortDescription": "Create or reuse a Windows Codex quota taskbar widget.",
+    "longDescription": "Build a Windows taskbar widget that displays local Codex 5-hour and weekly quota, or begin from the included verified WPF source template.",
+    "developerName": "neystan",
+    "category": "Productivity",
+    "capabilities": ["Write"],
+    "defaultPrompt": [
+      "Create a Codex usage taskbar widget from the included source template.",
+      "Customize my Codex usage taskbar widget UI and keep its quota refresh safe."
+    ]
+  }
+}
