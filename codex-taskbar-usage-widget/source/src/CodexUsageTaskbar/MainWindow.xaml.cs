@@ -39,7 +39,7 @@ public partial class MainWindow : Window
     {
         viewModel.Apply(snapshot);
         StatusText.Text = viewModel.StatusText;
-        BatteryFill.Width = 16 * (viewModel.FiveHourRemaining ?? 0) / 100.0;
+        BatteryFill.Width = 21 * (viewModel.FiveHourRemaining ?? 0) / 100.0;
         BatteryFill.Background = viewModel.BatteryBrush;
         FiveHourValue.Text = snapshot.FiveHour is null ? "--" : $"{snapshot.FiveHour.RemainingPercent}%";
         WeeklyValue.Text = snapshot.Weekly is null ? "--" : $"{snapshot.Weekly.RemainingPercent}%";
